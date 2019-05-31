@@ -27,7 +27,7 @@ def index(request):
         r = requests.get(url.format(city, WEATHER_API_KEY)).json()
 
         city_weather = {
-          'city': city.name,
+          'city': city.name.title(),
           'temperature': r['main']['temp'],
           'description': r['weather'][0]['description'].title(),
           'icon': r['weather'][0]['icon'],
