@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Django Weather App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
 </head>
 
 <body>
-    <section class="hero is-primary">
+    <section class="hero is-dark">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-                    What's the weather like?
+                <h1 class="title has-text-centered">
+                    Django Weather App
                 </h1>
             </div>
         </div>
@@ -24,12 +24,13 @@
             <div class="columns">
                 <div class="column is-offset-4 is-4">
                     <form method="POST">
+                        {% csrf_token %} 
                         <div class="field has-addons">
                             <div class="control is-expanded">
-                                <input class="input" type="text" placeholder="City Name">
+                                {{ form.name }}
                             </div>
                             <div class="control">
-                                <button class="button is-info">
+                                <button type="submit" class="button is-dark">
                                     Add City
                                 </button>
                             </div>
@@ -43,6 +44,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
+                {% for city_weather in weather_data %}
                     <div class="box">
                         <article class="media">
                             <div class="media-left">
@@ -56,12 +58,13 @@
                                         <span class="title"> {{city_weather.city}}</span>
                                         <br>
                                         <span class="subtitle">{{city_weather.temperature}} ° F</span>
-                                        <br> {{city_weather.description}}
+                                        <br> {{ city_weather.description }}
                                     </p>
                                 </div>
                             </div>
                         </article>
                     </div>
+                {% endfor %}
                 </div>
             </div>
         </div>
