@@ -9,6 +9,8 @@ pylint = "<2.0.0"
 [packages]
 requests = "*"
 django-toolbelt = "*"
+gunicorn = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "2.7"

@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath django-weather-app django-weather-app.wsgi --log-file -
+web: gunicorn --pythonpath weather_app weather_app.wsgi --log-file -
