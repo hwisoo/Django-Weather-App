@@ -4,10 +4,7 @@ from django.shortcuts import render
 from .models import City
 from .forms import CityForm
 
-from dotenv import read_dotenv
-
-read_dotenv('.ENV')
-WEATHER_API_KEY = (os.environ.get('WEATHER_API_KEY'))
+WEATHER_API_KEY = 'f68015cb4910abf208ca4d742ad9298f'
 
 def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid={}'
