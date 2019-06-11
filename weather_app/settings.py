@@ -25,7 +25,7 @@ SECRET_KEY = 'r!3*!#*ejac5!)-or3r3$t^7qvnl13v24*q2o=&yk&*^+ab4uc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-weather-app.herokuapp.com',
+ALLOWED_HOSTS = ['django-weather-app.herokuapp',
                 '127.0.0.1',]
 
 
